@@ -155,7 +155,7 @@ def normalizar_por_canal(X_train, X_test):
     Normaliza cada canal de forma independiente.
 
     X tiene shape (N, 2, 4096):
-      axis (0,2) = sobre muestras y tiempo → resultado shape (1, 2, 1)
+    axis (0,2) = sobre muestras y tiempo → resultado shape (1, 2, 1)
     Así cada canal tiene su propia media y desviación estándar.
     El test siempre se normaliza con las estadísticas del train (sin trampa).
     """
@@ -191,7 +191,7 @@ def ejecutar_lobo_oficial():
 
     # --- Hiperparámetros ---
     EPOCAS     = 60    # Más que el original (30) pero menos que nuestra versión raw (80)
-                       # El espectro FFT es más informativo → converge más rápido
+                    # El espectro FFT es más informativo → converge más rápido
     BATCH_SIZE = 128
     LR_INICIAL = 0.001
 
@@ -299,7 +299,7 @@ def ejecutar_lobo_oficial():
         resultados_test.append(acc_test)
 
         tqdm.write(f"  [{idx+1:02d}/15] Rodamiento test={rod_test:5s} | "
-                   f"Train: {acc_train:5.1f}% | LOBO Test: {acc_test:5.1f}%")
+                f"Train: {acc_train:5.1f}% | LOBO Test: {acc_test:5.1f}%")
 
         # Liberar memoria al final de cada iteración
         del modelo, X_train_t, X_test_t, Y_train_t, Y_test_t
@@ -406,11 +406,11 @@ def generar_tabla_comparativa(acc_cnn_train, acc_cnn_test, resultados_por_rod):
                 tbl[i, j].set_text_props(weight='bold', color='#1B5E20')
 
     ax1.set_title('Tabla Comparativa: Modelos Clásicos vs CNN 1D + FFT Log (Corregida)',
-                  fontsize=13, fontweight='bold', pad=10)
+                fontsize=13, fontweight='bold', pad=10)
 
     # --- Gráfico inferior: Accuracy por rodamiento ---
     colores = ['#4CAF50' if r >= 68.5 else '#FF7043' if r < 33.3 else '#FFA726'
-               for r in resultados_por_rod]
+            for r in resultados_por_rod]
 
     ax2.bar(RODAMIENTOS_TABLA_10, resultados_por_rod, color=colores, edgecolor='white', linewidth=0.8)
     ax2.axhline(y=68.5, color='#1565C0', linestyle='--', linewidth=1.5, label='SVM Paper (68.5%)')
