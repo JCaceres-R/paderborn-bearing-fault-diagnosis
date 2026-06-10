@@ -4,7 +4,7 @@
 > Johan Sebastián Cáceres Rodríguez · Joel Eduardo Reyes Barrios  
 > Universidad Distrital Francisco José de Caldas · 2026
 
-End-to-end pipeline for bearing fault diagnosis using the [Paderborn University Bearing Data Center](https://mb.uni-paderborn.de/kat/forschung/kat-datacenter/bearing-datacenter/) dataset. The project covers two paradigms — raw signal learning with 1D-CNNs and handcrafted feature engineering with SOM-guided selection — evaluated exclusively under a strict **Leave-One-Bearing-Out (LOBO)** protocol that measures real cross-bearing generalization instead of inflated random-split accuracy.
+End-to-end pipeline for bearing fault diagnosis using the [Paderborn University Bearing Data Center](https://www.kaggle.com/datasets/dippatel03/paderborn-db) dataset. The project covers two paradigms — raw signal learning with 1D-CNNs and handcrafted feature engineering with SOM-guided selection — evaluated exclusively under a strict **Leave-One-Bearing-Out (LOBO)** protocol that measures real cross-bearing generalization instead of inflated random-split accuracy.
 
 ---
 
@@ -55,7 +55,7 @@ The central research questions are:
 
 Mixed-damage bearings (KB codes) are excluded due to ambiguous labeling.
 
-> The dataset is not included in this repository. Download it directly from the [Paderborn Bearing Data Center](https://mb.uni-paderborn.de/kat/forschung/kat-datacenter/bearing-datacenter/) and place the `.mat` files under `data/raw/`.
+> The dataset is not included in this repository. Download it directly from the [Paderborn Bearing Data Center](https://www.kaggle.com/datasets/dippatel03/paderborn-db) and place the `.mat` files under `data/raw/`.
 
 ---
 
